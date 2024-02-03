@@ -1,5 +1,20 @@
 * {
-  outline: 1px dotted red;
+  /* outline: 1px dotted red; */
   margin: 0;
   padding: 0;
+}
+
+.container {
+  display: flex;
+  max-width: 600px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.item {
+  width: calc(600px / 16);
+  height: calc(600px / 16);
+  border: 1px solid #292121;
+  box-sizing: border-box;
 }
