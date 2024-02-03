@@ -29,6 +29,9 @@ function setGridsPerRow() {
 const gridButtonSetting = document.querySelector('.squares-per-row-btn');
 gridButtonSetting.addEventListener('click', () => setGridsPerRow());
 
+const resetButton = document.querySelector('.reset-btn');
+resetButton.addEventListener('click', () => createGrid(16));
+
 function changeColorOnHover(e) {
   e.target.style.background = 'pink';
 }
