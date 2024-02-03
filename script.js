@@ -1,3 +1,5 @@
+let randomColors = false;
+
 function createGrid(x) {
   const container = document.querySelector('.container');
   const items = document.getElementsByClassName('item');
@@ -32,8 +34,26 @@ gridButtonSetting.addEventListener('click', () => setGridsPerRow());
 const resetButton = document.querySelector('.reset-btn');
 resetButton.addEventListener('click', () => createGrid(16));
 
+const randomColorsButton = document.querySelector('.random-colors-btn');
+randomColorsButton.addEventListener('click', () => {
+  randomColors = !randomColors;
+  randomColorsButton.textContent = randomColors
+    ? 'Single Color'
+    : 'Random Colors';
+});
+
+function generateRGB() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return { r, g, b };
+}
+
 function changeColorOnHover(e) {
-  e.target.style.background = 'pink';
+  const rgb = generateRGB();
+  e.target.style.background = !randomColors
+    ? 'pink'
+    : `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
 }
 
 createGrid(16);

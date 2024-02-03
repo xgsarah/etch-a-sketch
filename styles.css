@@ -39,6 +39,7 @@ h1 {
 .reset {
   display: flex;
   justify-content: center;
+  gap: 12px;
 }
 
 .reset {
