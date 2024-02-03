@@ -51,9 +51,16 @@ function generateRGB() {
 
 function changeColorOnHover(e) {
   const rgb = generateRGB();
-  e.target.style.background = !randomColors
-    ? 'pink'
-    : `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+  if (!e.target.style.background) {
+    e.target.style.background = !randomColors
+      ? 'pink'
+      : `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+  } else {
+    const currentFilter = e.target.style.filter;
+    e.target.style.filter = currentFilter
+      ? `brightness(${parseInt(currentFilter.match(/\d+/)[0], 10) - 10}%)`
+      : 'brightness(90%)';
+  }
 }
 
 createGrid(16);

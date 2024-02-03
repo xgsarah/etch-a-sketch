@@ -33,6 +33,7 @@ h1 {
 .item {
   border: 1px solid #c7c8cc;
   box-sizing: border-box;
+  background: #ffffff;
 }
 
 .settings,
